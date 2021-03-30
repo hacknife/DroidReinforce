@@ -6,7 +6,7 @@ import org.gradle.api.Project
 public class ReinforcePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
-        project.task("droidReinforce") << {
+        project.task("droidReinforce") {
             println("==================droidReinforce============================>>")
         }
     }
