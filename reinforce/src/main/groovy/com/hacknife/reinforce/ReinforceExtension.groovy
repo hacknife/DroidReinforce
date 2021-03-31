@@ -15,34 +15,14 @@ import groovy.transform.PackageScope
  */
 class ReinforceExtension {
 
-    String repoName = 'maven'
-    String userOrg
+    String secretId = ''
+    String secretKey = ''
+    String msPath = ''
+    String apkSignerPath = ''
+    String keystorePath = ''
+    String alias = ''
+    String password = ''
 
-    String groupId
-    String artifactId
-
-    String publishVersion
-
-    Map<String, String> versionAttributes = [:]
-
-    String[] licences = ['Apache-2.0']
-
-    String uploadName = ''
-
-    String desc
-
-    String website = ''
-    String issueTracker = ''
-    String repository = ''
-    boolean autoPublish = true
-
-    String bintrayUser = ''
-    String bintrayKey = ''
-    boolean dryRun = true
-    boolean override = false
-    boolean sign = false
-
-    String[] publications
 
     /**
      * Validate all mandatory properties for this extension.

@@ -13,24 +13,33 @@ class PropertyFinder {
     }
 
     def getSecretId() {
-        getString(project, 'secretId', extension.bintrayUser)
+        getString(project, 'secretId', extension.secretId)
     }
 
     def getSecretKey() {
-        getString(project, 'secretKey', extension.bintrayKey)
+        getString(project, 'secretKey', extension.secretKey)
     }
 
     def getMsPath() {
-        getBoolean(project, 'msPath', extension.dryRun)
+        getString(project, 'msPath', extension.msPath)
     }
 
-    def getOverride() {
-        getBoolean(project, 'override', extension.override)
+    def getApkSignerPath() {
+        getString(project, 'apkSignerPath', extension.apkSignerPath)
     }
 
-    def getPublishVersion() {
-        getString(project, 'publishVersion', extension.publishVersion)
+    def getKeystore() {
+        getString(project, 'keystorePath', extension.keystorePath)
     }
+
+    def getAlias() {
+        getString(project, 'alias', extension.alias)
+    }
+
+    def getPassword() {
+        getString(project, 'password', extension.password)
+    }
+
 
     private String getString(Project project, String propertyName, String defaultValue) {
         project.hasProperty(propertyName) ? project.getProperty(propertyName) : defaultValue
