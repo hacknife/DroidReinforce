@@ -1,13 +1,15 @@
 package com.hacknife.reinforce
 
+import org.gradle.api.GradleException
 import org.gradle.api.Project;
 
 class PropertyFinder {
 
     private final Project project
-    private final ReinforceExtension extension
+    private final ConfigExtension extension
 
-    PropertyFinder(Project project, ReinforceExtension extension) {
+
+    PropertyFinder(Project project, ConfigExtension extension) {
         this.extension = extension
         this.project = project
     }
@@ -28,8 +30,8 @@ class PropertyFinder {
         getString(project, 'apkSignerPath', extension.apkSignerPath)
     }
 
-    def getKeystore() {
-        getString(project, 'keystorePath', extension.keystorePath)
+    def getJksPath() {
+        getString(project, 'jksPath', extension.jksPath)
     }
 
     def getAlias() {
@@ -40,7 +42,6 @@ class PropertyFinder {
         getString(project, 'password', extension.password)
     }
 
-
     private String getString(Project project, String propertyName, String defaultValue) {
         project.hasProperty(propertyName) ? project.getProperty(propertyName) : defaultValue
     }
@@ -49,4 +50,27 @@ class PropertyFinder {
         project.hasProperty(propertyName) ? Boolean.parseBoolean(project.getProperty(propertyName)) : defaultValue
     }
 
+    void invalid() {
+        if (secretId == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.secretId")
+        }
+        if (secretKey == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.secretKey")
+        }
+        if (msPath == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.msPath")
+        }
+        if (apkSignerPath == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.apkSignerPath")
+        }
+        if (jksPath == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.jksPath")
+        }
+        if (alias == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.alias")
+        }
+        if (password == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.password")
+        }
+    }
 }
