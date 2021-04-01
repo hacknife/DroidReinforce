@@ -43,13 +43,13 @@ dependencies {
 }
 
 
-apply plugin: 'com.hacknife.droidreinforce'
-reinforceConfig {
-    secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
-    secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
-    apkSigner = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
-    zipalign = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
-    jks = 'F:\\Project\\Android\\DroidReinforce\\app.jks'
-    alias = 'hacknife'
-    password = 'hacknife'
-}
+//apply plugin: 'com.hacknife.droidreinforce'
+//reinforceConfig {
+//    secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
+//    secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
+//    apkSigner = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
+//    zipalign = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
+//    jks = 'F:\\Project\\Android\\DroidReinforce\\app.jks'
+//    alias = 'hacknife'
+//    password = 'hacknife'
+//}
