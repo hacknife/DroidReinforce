@@ -6,14 +6,15 @@ import org.gradle.api.Project
 class ConfigExtension {
     String secretId;
     String secretKey;
-    String msPath;
-    String apkSignerPath;
-    String jksPath;
+    String ms;
+    String apkSigner;
+    String jks;
     String alias;
     String password;
-    String zipalignPath;
+    String zipalign;
 
     ConfigExtension(Project project) {
-        msPath = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}ms-shield.jar"
+        ms = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}ms-shield.jar"
+//        project.
     }
 }

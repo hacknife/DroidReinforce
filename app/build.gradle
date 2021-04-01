@@ -46,10 +46,10 @@ dependencies {
 reinforceConfig {
     secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
     secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
-//    msPath = 'C:\\Users\\tech137\\Downloads\\ms-shield.jar'
-    apkSignerPath = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
-    zipalignPath = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
-    jksPath = 'F:\\Project\\Android\\DroidReinforce\\app.jks'
+//    ms = 'C:\\Users\\tech137\\Downloads\\ms-shield.jar'
+    apkSigner = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
+    zipalign = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
+    jks = 'F:\\Project\\Android\\DroidReinforce\\app.jks'
     alias = 'hacknife'
     password = 'hacknife'
 }

@@ -22,16 +22,16 @@ class PropertyFinder {
         getString(project, 'secretKey', extension.secretKey)
     }
 
-    def getMsPath() {
-        getString(project, 'msPath', extension.msPath)
+    def getMs() {
+        getString(project, 'ms', extension.ms)
     }
 
-    def getApkSignerPath() {
-        getString(project, 'apkSignerPath', extension.apkSignerPath)
+    def getApkSigner() {
+        getString(project, 'apkSigner', extension.apkSigner)
     }
 
-    def getJksPath() {
-        getString(project, 'jksPath', extension.jksPath)
+    def getJks() {
+        getString(project, 'jks', extension.jks)
     }
 
     def getAlias() {
@@ -42,7 +42,7 @@ class PropertyFinder {
         getString(project, 'password', extension.password)
     }
     def getZipalign() {
-        getString(project, 'zipalignPath', extension.zipalignPath)
+        getString(project, 'zipalign', extension.zipalign)
     }
 
     def getApkDirectory() {
@@ -64,14 +64,14 @@ class PropertyFinder {
         if (secretKey == null) {
             throw new GradleException("Missing attributes: reinforceConfig.secretKey")
         }
-        if (msPath == null) {
-            throw new GradleException("Missing attributes: reinforceConfig.msPath")
+        if (ms == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.ms")
         }
-        if (apkSignerPath == null) {
-            throw new GradleException("Missing attributes: reinforceConfig.apkSignerPath")
+        if (apkSigner == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.apkSigner")
         }
-        if (jksPath == null) {
-            throw new GradleException("Missing attributes: reinforceConfig.jksPath")
+        if (jks == null) {
+            throw new GradleException("Missing attributes: reinforceConfig.jks")
         }
         if (alias == null) {
             throw new GradleException("Missing attributes: reinforceConfig.alias")
