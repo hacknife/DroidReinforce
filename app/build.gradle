@@ -10,7 +10,6 @@ buildscript {
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.hacknife.droidreinforce'
 android {
     signingConfigs {
         release {
@@ -43,10 +42,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 }
 
+
+apply plugin: 'com.hacknife.droidreinforce'
 reinforceConfig {
     secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
     secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
-//    ms = 'C:\\Users\\tech137\\Downloads\\ms-shield.jar'
     apkSigner = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
     zipalign = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
     jks = 'F:\\Project\\Android\\DroidReinforce\\app.jks'

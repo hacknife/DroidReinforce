@@ -18,6 +18,7 @@ class ReinforceTask extends BaseTask {
         project.logger.log(LogLevel.WARN, "ms-shield: ${finder.ms}")
         project.logger.log(LogLevel.WARN, "apkSigner: ${finder.apkSigner}")
         project.logger.log(LogLevel.WARN, "zipalign: ${finder.zipalign}")
+        project.logger.log(LogLevel.WARN, "apkDir: ${finder.apkDirectory}")
         project.logger.log(LogLevel.WARN, "jks: ${finder.jks}")
         project.logger.log(LogLevel.WARN, "alias: ${finder.alias}")
         project.logger.log(LogLevel.WARN, "password: ${finder.password}")

@@ -12,9 +12,9 @@ class ConfigExtension {
     String alias;
     String password;
     String zipalign;
+    String apkDir = ""
 
     ConfigExtension(Project project) {
         ms = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}ms-shield.jar"
-//        project.
     }
 }

@@ -41,12 +41,13 @@ class PropertyFinder {
     def getPassword() {
         getString(project, 'password', extension.password)
     }
+
     def getZipalign() {
         getString(project, 'zipalign', extension.zipalign)
     }
 
     def getApkDirectory() {
-        new File(getString(project, 'apkDir', "${project.projectDir.path}${File.separator}build${File.separator}outputs${File.separator}apk${File.separator}"))
+        new File(getString(project, 'apkDir', "${project.projectDir.path}${File.separator}build${File.separator}outputs${File.separator}apk${File.separator}${extension.apkDir}"))
     }
 
     private String getString(Project project, String propertyName, String defaultValue) {
