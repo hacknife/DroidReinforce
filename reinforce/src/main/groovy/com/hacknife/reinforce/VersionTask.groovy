@@ -11,7 +11,7 @@ class VersionTask extends BaseTask {
         ConfigExtension extension = project.getExtensions().findByType(ConfigExtension.class);
         PropertyFinder finder = new PropertyFinder(project, extension)
         finder.invalid()
-        String cmd = "java -jar ${finder.msPath} -v"
+        String cmd = "java -jar ${finder.ms} -v"
         StreamReader.exec(project, cmd)
     }
 
