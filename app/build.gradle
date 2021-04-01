@@ -13,7 +13,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         release {
-            storeFile file('F:\\Project\\Android\\DroidReinforce\\app.jks')
+            storeFile file('./../app.jks')
             storePassword 'hacknife'
             keyAlias 'hacknife'
             keyPassword 'hacknife'
