@@ -12,6 +12,14 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'com.hacknife.droidreinforce'
 android {
+    signingConfigs {
+        release {
+            storeFile file('F:\\Project\\Android\\DroidReinforce\\app.jks')
+            storePassword 'hacknife'
+            keyAlias 'hacknife'
+            keyPassword 'hacknife'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -21,6 +29,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        signingConfig signingConfigs.release
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,8 +46,9 @@ dependencies {
 reinforceConfig {
     secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
     secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
-    msPath = 'C:\\Users\\tech137\\Downloads\\ms-shield.jar'
+//    msPath = 'C:\\Users\\tech137\\Downloads\\ms-shield.jar'
     apkSignerPath = 'D:\\AndroidSdk\\build-tools\\30.0.2\\lib\\apksigner.jar'
+    zipalignPath = 'D:\\AndroidSdk\\build-tools\\30.0.2\\zipalign.exe'
     jksPath = 'F:\\Project\\Android\\DroidReinforce\\app.jks'
     alias = 'hacknife'
     password = 'hacknife'

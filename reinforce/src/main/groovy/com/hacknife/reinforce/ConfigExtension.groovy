@@ -11,7 +11,9 @@ class ConfigExtension {
     String jksPath;
     String alias;
     String password;
+    String zipalignPath;
 
     ConfigExtension(Project project) {
+        msPath = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}ms-shield.jar"
     }
 }
