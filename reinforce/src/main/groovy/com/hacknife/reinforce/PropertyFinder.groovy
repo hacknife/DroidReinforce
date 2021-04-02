@@ -31,7 +31,10 @@ class PropertyFinder {
     }
 
     def getJks() {
-        getString(project, 'jks', extension.jks)
+        String jks = getString(project, 'jks', extension.jks)
+        File file = new File(jks)
+        if (file.exists()) return jks
+        else "${project.parent.projectDir.path}${File.separator}${jks}"
     }
 
     def getAlias() {
