@@ -63,8 +63,7 @@ class BaseTask extends DefaultTask {
     static File download(String url, String path, Closure closure) {
         File apkFile = new File(path)
         if (apkFile.exists()) {
-            if (apkFile.size() >= 3522686.0)
-                return apkFile
+            return apkFile
         }
         InputStream stream = null;
         FileOutputStream fos = null;

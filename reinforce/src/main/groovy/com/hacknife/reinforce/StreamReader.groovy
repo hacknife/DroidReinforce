@@ -45,7 +45,7 @@ class StreamReader {
 
     static exec(Project project, String cmd) {
         Process process = Runtime.runtime.exec(cmd2Translate(cmd), null, null)
-        StreamReader reader = new StreamReader(process.inputStream,  { text -> project.logger.log(LogLevel.WARN, changCharSet(text)) })
+        StreamReader reader = new StreamReader(process.inputStream, { text -> project.logger.log(LogLevel.WARN, changCharSet(text)) })
         reader.read()
         process.waitFor()
     }

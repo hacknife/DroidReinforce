@@ -6,8 +6,8 @@ import org.gradle.api.tasks.TaskAction
 class VersionTask extends BaseTask {
 
     private static final MS_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
-    private static final APK_SIGNER_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
-    private static final ZIP_ALIGN_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
+    private static final APK_SIGNER_URL = "http://file.hacknife.com/apksigner_30.0.2.jar"
+    private static final ZIP_ALIGN_URL = "http://file.hacknife.com/zipalign_30.0.2.exe"
 
     @TaskAction
     void run() throws Exception {
