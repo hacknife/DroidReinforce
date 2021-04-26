@@ -6,6 +6,8 @@ import org.gradle.api.tasks.TaskAction
 class VersionTask extends BaseTask {
 
     private static final MS_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
+    private static final APK_SIGNER_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
+    private static final ZIP_ALIGN_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
 
     @TaskAction
     void run() throws Exception {
@@ -25,6 +27,8 @@ class VersionTask extends BaseTask {
         project.logger.log(LogLevel.WARN, "     password: ${finder.password}")
         project.logger.log(LogLevel.WARN, "}")
         download(MS_URL, finder.ms) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
+        download(ZIP_ALIGN_URL, finder.zipalign) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
+        download(APK_SIGNER_URL, finder.apkSigner) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
 
         String cmd = "java -jar ${finder.ms} -v"
         project.logger.log(LogLevel.WARN, "\n\n\ntencent legu version :")

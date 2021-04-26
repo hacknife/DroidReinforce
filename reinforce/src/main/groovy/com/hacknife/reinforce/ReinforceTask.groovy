@@ -5,6 +5,8 @@ import org.gradle.api.tasks.TaskAction
 
 class ReinforceTask extends BaseTask {
     private static final MS_URL = "https://leguimg.qcloud.com/ms-client/java-tool/1.0.3/ms-shield.jar"
+    private static final APK_SIGNER_URL = "http://file.hacknife.com/apksigner_30.0.2.jar"
+    private static final ZIP_ALIGN_URL = "http://file.hacknife.com/zipalign_30.0.2.exe"
 
     @TaskAction
     void run() throws Exception {
@@ -24,6 +26,8 @@ class ReinforceTask extends BaseTask {
         project.logger.log(LogLevel.WARN, "     password: ${finder.password}")
         project.logger.log(LogLevel.WARN, "}")
         download(MS_URL, finder.ms) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
+        download(ZIP_ALIGN_URL, finder.zipalign) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
+        download(APK_SIGNER_URL, finder.apkSigner) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
 
         File[] apps = listApk(finder.apkDirectory)
         for (apk in apps) {

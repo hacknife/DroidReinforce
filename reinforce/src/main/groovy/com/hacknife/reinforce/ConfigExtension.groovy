@@ -16,5 +16,7 @@ class ConfigExtension {
 
     ConfigExtension(Project project) {
         ms = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}ms-shield.jar"
+        apkSigner = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}apkSigner_30.0.2.jar"
+        zipalign = "${new File(project.getProjectDir().parentFile, ".reinforce").path}${File.separator}.tools${File.separator}zipalign_30.0.2.exe"
     }
 }
