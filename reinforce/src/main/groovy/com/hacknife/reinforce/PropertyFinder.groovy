@@ -50,7 +50,16 @@ class PropertyFinder {
     }
 
     def getApkDirectory() {
-        new File(getString(project, 'apkDir', "${project.projectDir.path}${File.separator}build${File.separator}outputs${File.separator}apk${File.separator}${extension.apkDir}"))
+        String[] apkDirs = getString(project, 'apkDir', extension.apkDir)
+                .replaceAll("\\[", '')
+                .replaceAll("]", '')
+                .replaceAll(" ", '')
+                .split(",")
+        List<File> files = new ArrayList<>()
+        for (String dir in apkDirs) {
+            files.add(new File("${project.projectDir.path}${File.separator}build${File.separator}outputs${File.separator}apk${File.separator}${dir}"))
+        }
+        return files
     }
 
     private String getString(Project project, String propertyName, String defaultValue) {

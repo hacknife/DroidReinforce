@@ -23,6 +23,10 @@ class BaseTask extends DefaultTask {
         new File(reinforceDir(), ".output")
     }
 
+    def rootApkDir() {
+        new File("${project.projectDir.path}${File.separator}build${File.separator}outputs${File.separator}apk${File.separator}")
+    }
+
     def toolDir() {
         new File(reinforceDir(), ".tools")
     }

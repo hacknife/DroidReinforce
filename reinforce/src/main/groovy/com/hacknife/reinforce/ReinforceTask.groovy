@@ -29,16 +29,20 @@ class ReinforceTask extends BaseTask {
         download(ZIP_ALIGN_URL, finder.zipalign) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
         download(APK_SIGNER_URL, finder.apkSigner) { progress -> project.logger.log(LogLevel.WARN, "${progress}") }
 
-        File[] apps = listApk(finder.apkDirectory)
-        for (apk in apps) {
-            File outputDir = makeOutApkDir(outputDir(), finder.apkDirectory, apk)
-            String ms_filed = "java -Dfile.encoding=UTF-8 -jar ${finder.ms} -sid ${finder.secretId} -skey ${finder.secretKey} -uploadPath ${apk.path} -downloadPath ${outputDir.path}"
-            StreamReader.exec(project, ms_filed)
-            String zipalign = "${finder.zipalign} -v -p 4 ${outputDir}${File.separator}${prefixName(apk)}_legu.apk ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign.apk"
-            StreamReader.exec(project, zipalign)
-            String apkSinger = "java -jar ${finder.apkSigner} sign --ks ${finder.jks} --ks-key-alias ${finder.alias} --ks-pass pass:${finder.password} --key-pass pass:${finder.password} --out ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign_signed.apk ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign.apk"
-            StreamReader.exec(project, apkSinger)
-            new File("${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign_signed.apk.idsig").delete()
+        List<File> dirs = finder.apkDirectory
+        for (dir in dirs) {
+            File[] apps = listApk(dir)
+            for (apk in apps) {
+                File outputDir = makeOutApkDir(outputDir(), rootApkDir(), apk)
+                String ms_filed = "java -Dfile.encoding=UTF-8 -jar ${finder.ms} -sid ${finder.secretId} -skey ${finder.secretKey} -uploadPath ${apk.path} -downloadPath ${outputDir.path}"
+                StreamReader.exec(project, ms_filed)
+                String zipalign = "${finder.zipalign} -v -p 4 ${outputDir}${File.separator}${prefixName(apk)}_legu.apk ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign.apk"
+                StreamReader.exec(project, zipalign)
+                String apkSinger = "java -jar ${finder.apkSigner} sign --ks ${finder.jks} --ks-key-alias ${finder.alias} --ks-pass pass:${finder.password} --key-pass pass:${finder.password} --out ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign_signed.apk ${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign.apk"
+                StreamReader.exec(project, apkSinger)
+                new File("${outputDir}${File.separator}${prefixName(apk)}_legu_zipalign_signed.apk.idsig").delete()
+            }
         }
+
     }
 }
