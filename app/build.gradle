@@ -4,9 +4,6 @@ buildscript {
         jcenter()
         maven { url 'https://jitpack.io' }
     }
-//    dependencies {
-//        classpath fileTree(dir: './../reinforce/build/libs/reinforce.jar')
-//    }
 }
 
 apply plugin: 'com.android.application'
@@ -41,13 +38,3 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 }
-
-
-//apply plugin: 'com.hacknife.droidreinforce'
-//reinforceConfig {
-//    secretId = 'AKIDEH4g3yWx52sVx9xKL8f3FDxPr7QW3sjQ'
-//    secretKey = 'lNkqEn6B1fla7tb46GC3eOddP0iBOMH3'
-//    jks = './app.jks'
-//    alias = 'hacknife'
-//    password = 'hacknife'
-//}
