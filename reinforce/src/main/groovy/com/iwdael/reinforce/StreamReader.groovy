@@ -1,4 +1,4 @@
-package com.hacknife.reinforce
+package com.iwdael.reinforce
 
 import org.gradle.api.Project
 import org.gradle.api.logging.LogLevel

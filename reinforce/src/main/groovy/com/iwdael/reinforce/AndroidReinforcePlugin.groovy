@@ -1,10 +1,8 @@
-package com.hacknife.reinforce
+package com.iwdael.reinforce
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.ProjectConfigurationException
-
-import java.util.function.Consumer
 
 class AndroidReinforcePlugin implements Plugin<Project> {
     public static final String sPluginExtensionName = "reinforceConfig"
